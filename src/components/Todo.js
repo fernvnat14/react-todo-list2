@@ -23,6 +23,7 @@ export default function Todo(props) {
   function handleSubmit(e) {
       e.preventDefault();
       if (!newName.trim()) {
+        alert("Invalid Input")
         return;
       }
       props.editTask(props.id, newName);
