@@ -20,12 +20,15 @@ export default function Todo(props) {
         setNewName(e.target.value);
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        props.editTask(props.id, newName);
-        setNewName("");
-        setEditing(false);
-      }      
+  function handleSubmit(e) {
+      e.preventDefault();
+      if (!newName.trim()) {
+        return;
+      }
+      props.editTask(props.id, newName);
+      setNewName("");
+      setEditing(false);
+    }         
       
 
     const editingTemplate = (
