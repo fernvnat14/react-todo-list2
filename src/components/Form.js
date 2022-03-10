@@ -10,6 +10,7 @@ function Form(props) {
   function handleSubmit(e) {
     e.preventDefault();
     if (!name.trim()) {
+      alert("Invalid Input")
       return;
     }
     props.addTask(name);
