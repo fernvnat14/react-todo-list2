@@ -9,9 +9,13 @@ function Form(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!name.trim()) {
+      return;
+    }
     props.addTask(name);
     setName("");
   }
+  
   return (
     <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
